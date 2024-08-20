@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'css\landing.css' %}">
+    <link rel="stylesheet" href="{% static 'css\about.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="store-name">
+            <a href="">
+                <h2>YUMMY<img src="{% static 'images\pizza.png' %}" alt=""></h2>
+            </a>
+        </div>
+
+        <div class="middle-part">
+            <nav>
+                <a href="landing.html">Home</a>
+                <div class="menu"><a href="menu.html">Menu<i class="ri-arrow-down-s-line"></i></a>
+                    <div class="menu-subdiv">
+                        <div>
+                            <a href="#intro">Burger</a>
+
+                            <a href="#pizza">Pizza</a>
+                            <a href="#noodles">Noodle</a>
+                        </div>
+                        <div>
+                            <a href="#chicken">Chicken</a>
+                            <a href="#biryani">Biryani</a>
+                            <a href="#fish">Fish</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <a href="#">Pages<i class="ri-arrow-down-s-line"></i></a>
+                    <div class="menu-subdiv">
+                        <div>
+                            <a href="menu.html">Menu</a>
+                            <a href="about.html">About US</a>
+                        </div>
+                        <div>
+                            <a href="contact.html">Contact US</a>
+                            <a href="">Blog</a>
+
+                        </div>
+                        <div>
+                            <a href="admin.html">Admin</a>
+                            <a href="userorder.html">User Order</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="foodorde.html">Shop</a>
+                <a href="about.html">Blog</a>
+                <a href="contact.html">ContactUS</a>
+            </nav>
+        </div>
+        <div class="last-part">
+            <div class="search">
+                <input type="text" placeholder="">
+                <a href="#">
+                    <i class="fas ri-search-line"></i>
+                </a>
+            </div>
+            <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+            <a href="userdash.html"><i class="three-line ri-menu-3-line"></i></a>
+
+        </div>
+    </div>
+
+    <div class="my" style="text-align: center; height: 100vh; width: 100%; background-image: url('../static/images/gt.jpg'); background-size: cover; background-repeat: no-repeat;">
+        <div class=introyummy" style="height: 20vh; width: 50%; position: absolute; top: 30%; left: 50%;  transform: translate(-50%,-50%); color: green; font-size: 5vh; font-weight: 600; ">
+            <h1>Welcome to Yummy Yard</h1>
+            <p>Food ordering is now in your hand.</p>
+        </div>
+    </div>
+
+    <section class=" our-story">
+        <h2>Our Story</h2>
+        <p>Founded in 2024, ...</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>2024</h3>
+                <p>Our journey began...</p>
+            </div>
+            <div class="timeline-item">
+                <h3>202..</h3>
+                <p>working on Mobile App</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-mission">
+        <h2>Our Mission & Values</h2>
+        <p>Our mission is to provide efficient and instant service...</p>
+        <ul>
+            <li>Quality</li>
+            <li>Integrity</li>
+            <li>Sustainability</li>
+        </ul>
+    </section>
+
+    <section class="our-team">
+        <h2>Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="{% static '\images\nitesh.jpg'%}" alt="NIITESH KUSHWAHA">
+                <h3>NITESH KUSHWAHA</h3>
+                <p>Founder & Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static '\images\profile.jpg'%}" alt="RAJU KUSHWAHA">
+                <h3>RAJU KUSHWAHA</h3>
+                <p>Co-Founder & Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static '\images\afroj.jpg'%}" alt="RAJU KUSHWAHA">
+                <h3>Afroj Aalam</h3>
+                <p>CEO & Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <ul>
+            <li>Fresh ingredients sourced locally</li>
+            <li>Excellent customer service</li>
+            <li>You can get food instantly on your table...</li>
+        </ul>
+    </section>
+
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>Address: Guru Nanak Institute Of Technology R-R District, Telangana</p>
+            <p>Phone: +917973989466</p>
+            <p>Email: iamafroj555@gmail.com</p>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.1672945947303!2d78.65374317139823!3d17.16207127322802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb0954a6f5dfe5%3A0x28d0d3d6e1f55df3!2sGuru%20Nanak%20Institutions!5e0!3m2!1sen!2sin!4v1718255151816!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <footer>
+
+        <p>Thank you for choosing us...</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" <i class="ri-facebook-fill"></i></a>
+            <a href="https://www.instagram.com/afrozzz_99/"><i class="ri-instagram-line"></i></a>
+            <a href="https://www.linkedin.com/in/afroj-alam-0b735b255/"><i class="ri-linkedin-box-fill"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

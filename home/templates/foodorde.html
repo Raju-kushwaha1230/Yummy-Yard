@@ -1,0 +1,170 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css\landing.css' %}">
+    <link rel="stylesheet" href="{% static '\css\food.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <title>Order Page</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="store-name">
+            <a href="">
+                <h2>YUMMY<img src="{% static 'images\pizza.png' %}" alt=""></h2>
+            </a>
+        </div>
+
+        <div class="middle-part">
+            <nav>
+                <a href="landing.html">Home</a>
+            </nav>
+        </div>
+
+        <div class="last-part">
+            <div class="search">
+                <input type="text" placeholder="">
+                <a href="#">
+                    <i class="fas ri-search-line"></i>
+                </a>
+            </div>
+            <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+            <a href="userdash.html"><i class="three-line ri-menu-3-line"></i></a>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Order Page</h1>
+
+        <div class="menu">
+            <div class="food-card" onclick="addToOrder('Full chicken fried ', 100)">
+                <img class="food-image" src="{% static '\images\4-removebg-preview.png' %}" alt="Pizza">
+                <p>Full chicken fried - Rs100</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('cake', 100)">
+                <img class="food-image" src="{% static '\images\olivier-salad-side-view-removebg-preview.png' %}"
+                    alt="Burger">
+                <p>cake - Rs100</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Burger', 10)">
+                <img class="food-image" src="{% static 'images\3-removebg-preview.png' %}" alt="Pasta">
+                <p>Burger - Rs10</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Spicy full chicken fried', 150)">
+                <img class="food-image" src="{% static '\images\roasted-chicken-with-spices-gray.png' %}" alt="Pasta">
+                <p>Spicy full chicken fried -Rs.150</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Chicken wings fried ', 150)">
+                <img class="food-image"
+                    src="{% static '\images\side-view-baked-chicken-with-cucumber-lemon-seasoning-bread-table.png' %}"
+                    alt="Pasta">
+                <p>Chicken wings fried -Rs.150</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Nepali Pizza', 100)">
+                <img class="food-image" src="{% static '\images\pizza\Brick Oven Pizza 2.jpg' %}" alt="Pizza">
+                <p>Pizza - Rs100</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Italian Pizza', 100)">
+                <img class="food-image" src="{% static '\images\pizza\Brick Oven Pizza.jpg ' %}" alt="Burger">
+                <p>Burger - Rs100</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('chikago style pizza', 10)">
+                <img class="food-image" src="{% static '\images\pizza\chikago-style pizza.jpg' %}" alt="Pasta">
+                <p>chikago style pizza - Rs10</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('fish', 150)">
+                <img class="food-image" src="{% static '\images\fish dish.jpg' %}" alt="Pasta">
+                <p>fish -Rs.150</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('fish fried ', 150)">
+                <img class="food-image" src="{% static '\images\fish fried with meals.jpg' %}" alt="Pasta">
+                <p>fish fried -Rs.150</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Veg Biryani', 100)">
+                <img class="food-image" src="{% static '\images\mix veg biryani.jpg' %}" alt="Pizza">
+                <p>Veg Biryani - Rs100</p>
+            </div>
+            <div class="food-card" onclick="addToOrder('Noodle', 100)">
+                <img class="food-image" src="{% static '\images\noodles.jpg' %}" alt="Burger">
+                <p>Noodle - Rs100</p>
+            </div>
+        </div>
+        <a href="landing.html">Home</a>
+        <div class="order">
+            <h2>My Order</h2>
+            <div class="order-details" id="orderDetails">
+
+            </div>
+            <button class="order-button" onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+
+    <script>
+        var order = {};
+        var orderId = localStorage.getItem('lastOrderId') || 1;
+
+        function addToOrder(food, price) {
+            if (order[food]) {
+                order[food].quantity++;
+            } else {
+                order[food] = {
+                    price: price,
+                    quantity: 1
+                };
+            }
+            displayOrder();
+        }
+
+        function removeFromOrder(food) {
+            if (order[food] && order[food].quantity > 1) {
+                order[food].quantity--;
+            } else {
+                delete order[food];
+            }
+            displayOrder();
+        }
+
+        function displayOrder() {
+            var orderDetails = document.getElementById('orderDetails');
+            orderDetails.innerHTML = '';
+            var totalPrice = 0;
+            for (var food in order) {
+                var itemTotal = order[food].price * order[food].quantity;
+                totalPrice += itemTotal;
+                var itemHTML = `
+                <p>${food} x ${order[food].quantity} - Rs.${itemTotal}</p>
+                <button class="remove-button" onclick="removeFromOrder('${food}')">Remove</button>
+            `;
+                orderDetails.insertAdjacentHTML('beforeend', itemHTML);
+            }
+            orderDetails.insertAdjacentHTML('beforeend', `<p>Total: Rs.${totalPrice}</p>`);
+        }
+
+        function placeOrder() {
+            var orders = JSON.parse(localStorage.getItem('orders')) || [];
+            orders.push({
+                id: orderId,
+                date: new Date().toLocaleDateString(),
+                items: order,
+                status: 'Ordered'
+            });
+            localStorage.setItem('orders', JSON.stringify(orders));
+            localStorage.setItem('lastOrderId', ++orderId);
+            alert('Order placed successfully!');
+            // Clear the order
+            order = {};
+            displayOrder();
+        }
+    </script>
+
+</body>
+
+</html>

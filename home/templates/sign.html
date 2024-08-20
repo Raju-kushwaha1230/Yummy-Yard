@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="{%static '\css\signup.css'%}">
+</head>
+
+<body>
+  <div class="signup-main-page">
+    <div class="wrapper1">
+
+      <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Signup</h1> <br>
+        {% if messages %}
+         {% for message in messages %}
+           <h2 style="color: aqua; font-size: 4vh;">{{message}}</h2>
+         {% endfor %}
+        {% endif%}
+        
+        <div class="inputbox">
+          <input type="text" name="Username" placeholder="username " required />
+          <!-- <i class="bx bxs-user"></i> -->
+        </div>
+        <div class="inputbox">
+          <input type="email" name="Email" placeholder="E-mail " required />
+          <!-- <i class="bx bxs-user"></i> -->
+        </div>
+
+        <div class="inputbox">
+          <input type="roll" name="RollNo" placeholder="Roll no." required />
+          <!-- <i class="bx bxs-lock-alt"></i> -->
+        </div>
+
+        <div class="inputbox">
+          <input type="password" name="Password" placeholder="Password" />
+          <!-- <i class="bx bxs-lock-alt"></i> -->
+        </div>
+
+
+        <div class="rememberforgot">
+          <label><input type="checkbox" />Remember Me</label>
+        </div>
+
+        <button type="submit" name="Send" class="btn">Signup</button>
+      </form>
+      <a style="color: wheat; font-family: cursive; font-size: 3vh; text-decoration: none;" class="LogIn" href="login.html">Login</a>
+    </div>
+  </div>
+  <script>
+    
+  </script>
+
+</body>
+
+</html>

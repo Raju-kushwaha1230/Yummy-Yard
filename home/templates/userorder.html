@@ -1,0 +1,140 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Panel</title>
+  <link rel="stylesheet" href="{% static '\css\user.css' %}">
+  <link rel="stylesheet" href="{% static '\css\landing.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    .container {
+      background-color: #dada;
+      height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="nav-bar">
+
+    <div class="store-name">
+      <a href="">
+        <h2>YUMMY<img src="{% static 'images\pizza.png' %}" alt=""></h2>
+      </a>
+    </div>
+
+    <div class="middle-part">
+      <nav>
+        <a href="landing.html">Home</a>
+        <div class="menu"><a href="menu.html">Menu<i class="ri-arrow-down-s-line"></i></a>
+          <div class="menu-subdiv">
+            <div>
+              <a href="#intro">Burger</a>
+
+              <a href="#pizza">Pizza</a>
+              <a href="#noodles">Noodle</a>
+            </div>
+            <div>
+              <a href="#chicken">Chicken</a>
+              <a href="#biryani">Biryani</a>
+              <a href="#fish">Fish</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu">
+          <a href="">Pages<i class="ri-arrow-down-s-line"></i></a>
+          <div class="menu-subdiv">
+            <div>
+              <a href="menu.html">Menu</a>
+              <a href="about.html">About US</a>
+            </div>
+            <div>
+              <a href="contact.html">Contact US</a>
+              <a href="about.html">Blog</a>
+
+            </div>
+            <div>
+              <a href="admin.html">Admin</a>
+              <a href="userorder.html">User Order</a>
+            </div>
+          </div>
+        </div>
+        <a href="foodorde.html">Shop</a>
+        <a href="about.html">Blog</a>
+        <a href="contact.html">Contact US</a>
+      </nav>
+    </div>
+    <div class="last-part">
+      <div class="search">
+        <input type="text" placeholder="">
+        <a href="#">
+          <i class="fas ri-search-line"></i>
+        </a>
+      </div>
+      <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+      <a href="userdash.html"><i class="ri-menu-3-line"></i></a>
+
+    </div>
+  </div>
+
+
+  <div class="order-history">
+    <h1>Order History</h1>
+    <table class="tbl-full" id="ordersTable">
+      <tr>
+        <th width="5%">S.No</th>
+        <th width="10%">Order Date</th>
+        <th width="20%">Items</th>
+        <th width="10%">Total Price</th>
+        <th width="8%">Status</th>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+  <div id="profilePopup" class="profile-popup">
+    <span class="close-btn" onclick="toggleProfilePopup()">&times;</span>
+    <h2>User Profile</h2>
+    <p><strong>{{ user.username}}</p>
+    <p><strong>{{user.email}}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+
+  <script>
+    function loadOrderHistory() {
+      var ordersTable = document.getElementById('ordersTable');
+      var orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.forEach((order, index) => {
+        var totalPrice = 0;
+        var items = Object.keys(order.items).map(item => {
+          var quantity = order.items[item].quantity;
+          var price = order.items[item].price;
+          totalPrice += price * quantity;
+          return `${item} x ${quantity}`;
+        }).join(', ');
+
+        var rowHTML = `
+                    <tr data-id="${order.id}">
+                        <td>${index + 1}</td>
+                        <td>${order.date}</td>
+                        <td>${items}</td>
+                        <td>Rs.${totalPrice}</td>
+                        <td class="status">${order.status}</td>
+                    </tr>
+                `;
+        ordersTable.insertAdjacentHTML('beforeend', rowHTML);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadOrderHistory);
+  </script>
+
+</body>
+
+</html>

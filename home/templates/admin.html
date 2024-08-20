@@ -1,0 +1,226 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css\landing.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <title>Admin</title>
+  
+</head>
+
+<body>
+  <div class="nav-bar">
+    <div class="store-name">
+      <a href="">
+        <h2>YUMMY<img src="{% static 'images\pizza.png' %}" alt=""></h2>
+      </a>
+    </div>
+
+    <div class="middle-part">
+      <nav>
+        <a href="landing.html">Home</a>
+        <div class="menu"><a href="menu.html">Menu<i class="ri-arrow-down-s-line"></i></a>
+          <div class="menu-subdiv">
+            <div>
+              <a href="#intro">Burger</a>
+
+              <a href="#pizza">Pizza</a>
+              <a href="#noodles">Noodle</a>
+            </div>
+            <div>
+              <a href="#chicken">Chicken</a>
+              <a href="#biryani">Biryani</a>
+              <a href="#fish">Fish</a>
+            </div>
+          </div>
+        </div>
+        <div class="menu">
+          <a href="#">Pages<i class="ri-arrow-down-s-line"></i></a>
+          <div class="menu-subdiv">
+            <div>
+              <a href="menu.html">Menu</a>
+              <a href="about.html">About US</a>
+            </div>
+            <div>
+              <a href="contact.html">Contact US</a>
+              <a href="">Blog</a>
+
+            </div>
+            <div>
+              <a href="admin.html">Admin</a>
+              <a href="userorder.html">User Order</a>
+            </div>
+          </div>
+        </div>
+        <a href="foodorde.html">Shop</a>
+        <a href="about.html">Blog</a>
+        <a href="#">Contact US</a>
+      </nav>
+    </div>
+    <div class="last-part">
+      <div class="search">
+        <input type="text" placeholder="">
+        <a href="#">
+          <i class="fas ri-search-line"></i>
+        </a>
+      </div>
+      <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+      <a href="#"><i class="ri-menu-3-line"></i></a>
+
+    </div>
+  </div>
+  <div class="Manage_order">
+    <h1>Admin Manage Order</h1>
+    <table class="tbl-full" id="ordersTable">
+      <tr>
+        <th width="5%">S.No</th>
+        <th width="10%">Order Date</th>
+        <th width="20%">Items</th>
+        <th width="10%">Total Price</th>
+        <th width="8%">Status</th>
+        <th width="10%">Actions</th>
+      </tr>
+    </table>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Update Order Status</h2>
+      <label><input type="radio" name="status" value="Pending"> Order Pending</label><br>
+      <label><input type="radio" name="status" value="Completed"> Done</label><br>
+      <label><input type="radio" name="status" value="Cancelled"> Cancel</label><br>
+      <button onclick="updateStatus()">Update</button>
+    </div>
+
+  </div>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>Yummy<span>Yard</span>
+        <img src="img/fast-food (1).png">
+      </h3>
+
+      <p class="footer-links">
+        <a href="landing.html" class="link-1">Home</a>
+
+        <a href="about.html">Blog</a>
+
+        <a href="menu.html">Menu</a>
+
+        <a href="about.html">About</a>
+
+        <a href="">Pages</a>
+
+        <a href="contact.html">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Yummy Yard © 2024</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Guru Nanak Insititons Of Technologoy</span>Ibrahimpatanam, RR ,501506 , Hyderabad</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+91-6356355608</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">support@yummyyard.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About Yummy Yard</span>
+        Yummy Yard is a modern online food ordering platform designed exclusively for college campuses.
+        It offers a convenient way for students to order meals from various campus dining options and get them delivered
+        hot and fresh to their dorms,study areas,or any on-campus location.
+        Tailored to meet the specific needs of college students, Yummy Yard simplifies campus dining.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#"><i class="ri-github-fill"></i></a>
+        <a href="#"><i class="ri-twitter-x-fill"></i></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    var currentOrderId;
+
+    function loadOrders() {
+      var ordersTable = document.getElementById('ordersTable');
+      var orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.forEach((order, index) => {
+        var totalPrice = 0;
+        var items = Object.keys(order.items).map(item => {
+          var quantity = order.items[item].quantity;
+          var price = order.items[item].price;
+          totalPrice += price * quantity;
+          return `${item} x ${quantity}`;
+        }).join(', ');
+
+        var rowHTML = `
+            <tr data-id="${order.id}">
+                <td>${index + 1}</td>
+                <td>${order.date}</td>
+                <td>${items}</td>
+                <td>Rs.${totalPrice}</td>
+                <td class="status">${order.status}</td>
+                <td>
+                    <a href="#" class="btn-secondary" onclick="openModal(${order.id})">Update Order</a>
+                </td>
+            </tr>
+        `;
+        ordersTable.insertAdjacentHTML('beforeend', rowHTML);
+      });
+    }
+
+    function openModal(orderId) {
+      currentOrderId = orderId;
+      document.getElementById('myModal').style.display = 'block';
+    }
+ 
+    function closeModal() {
+      document.getElementById('myModal').style.display = 'none';
+    }
+
+    function updateStatus() {
+      var newStatus = document.querySelector('input[name="status"]:checked').value;
+      var orders = JSON.parse(localStorage.getItem('orders')) || [];
+      var order = orders.find(order => order.id === currentOrderId);
+      if (order) {
+        order.status = newStatus;
+        localStorage.setItem('orders', JSON.stringify(orders));
+        document.querySelector(`tr[data-id="${currentOrderId}"] .status`).textContent = newStatus;
+      }
+      closeModal();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadOrders);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{% static '\css\style1.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Login Here</h1>
+        {% if messages %}
+         {% for message in messages %}
+           <h2 style="color: aqua; font-size: 4vh;">{{message}}</h2>
+         {% endfor %}
+       {% endif%}
+
+        <label for="username">Username</label>
+        <input type="text" name="username"  placeholder="Username" id="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="password" id="password" required>
+
+        <button type="submit">Log In</button>
+        <a href="sign.html">Resister</a>
+    </form>
+     <h2>Login</h2> 
+    <!-- <form method="post">
+        <!-- {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+        <a href="sign.html">Resister</a>
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %} -->
+    <!-- </form> -->
+</body>
+</html>

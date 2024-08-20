@@ -1,0 +1,316 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css\landing.css' %}">
+  <link rel="stylesheet" href="{% static '\css\resposship.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+  <!-- <link rel="stylesheet" href="{% static 'css\style.css' %}"> -->
+  <style>
+    .three-line:hover{
+      color: brown;
+       height: 10px;
+    }
+  </style>
+  <title>Yummy Yard</title>
+</head>
+
+<body>
+  <div class="main-class">
+    <!-- <div class="main">
+      <div class="loader">
+        <h2 class="zoom">YUMMY YARD</h2>
+        <h1 class="scramble">YUMMY YARD</h1>
+        <div class="loading"></div>
+      </div>
+    </div> -->
+    <div class="main-page">
+      <div class="nav-bar">
+        <div class="store-name">
+          <a href="">
+            <h2>YUMMY<img src="{% static 'images\pizza.png' %}" alt=""></h2>
+          </a>
+        </div>
+
+        <div class="middle-part">
+          <nav>
+            <a href="landing.html">Home</a>
+            <div class="menu"><a href="menu.html">Menu<i class="ri-arrow-down-s-line"></i></a>
+              <div class="menu-subdiv">
+                <div>
+                  <a href="#intro">Burger</a>
+
+                  <a href="#pizza">Pizza</a>
+                  <a href="#noodles">Noodle</a>
+                </div>
+                <div>
+                  <a href="#chicken">Chicken</a>
+                  <a href="#biryani">Biryani</a>
+                  <a href="#fish">Fish</a>
+                </div>
+              </div>
+            </div>
+            <div class="menu">
+              <a href="#">Pages<i class="ri-arrow-down-s-line"></i></a>
+              <div class="menu-subdiv">
+                <div>
+                  <a href="menu.html">Menu</a>
+                  <a href="about.html">About US</a>
+                </div>
+                <div>
+                  <a href="contact.html">Contact US</a>
+                  <a href="">Blog</a>
+                  
+                </div>
+                <div>
+                  <a href="admin.html">Admin</a>
+                  <a href="userorder.html">User Order</a>
+                </div>
+              </div>
+            </div>
+            <a href="foodorde.html">Shop</a>
+            <a href="about.html">Blog</a>
+            <a href="contact.html">ContactUS</a>
+          </nav>
+        </div>
+        <div class="last-part">
+          <div class="search">
+            <input type="text" placeholder="">
+            <a href="#">
+              <i class="fas ri-search-line"></i>
+            </a>
+          </div>
+          <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+          <a href="userdash.html"><i class="three-line ri-menu-3-line"></i></a>
+
+        </div>
+      </div>
+      <!-- <div class="intro1">
+
+      </div> -->
+
+    </div>
+    <div class="first-page">
+      <!-- <nav>
+            <div class="logo">
+                <a href="#">Yummy Yard</a> </div>
+
+            <div class="menu">
+                <a href="">HOME</a>
+                <a href="#">ITEMS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="#">CONTACTS</a>
+            </div>
+            <div class="icon">
+                <img src="{% static '\images\fast-food (1).png' %}">
+            </div>
+        </nav> -->
+
+      <div class="image animate__animated animate__zoomIn animate__delay-1s">
+        <img src="{% static 'images/5-removebg.png' %}">
+      </div>
+
+      <div class="image2 animate__animated animate__zoomIn animate__delay-1s">
+        <img src="{% static 'images/olivier-salad-side-view-removebg-preview.png' %}">
+      </div>
+
+      <div class="image3 animate__animated animate__zoomIn animate__delay-1s">
+        <img src="{% static 'images/3-removebg-preview.png' %}">
+      </div>
+
+      <div class="image4 animate__animated animate__zoomIn animate__delay-1s">
+        <img src="{% static 'images/5-removebg-preview.png' %}">
+      </div>
+      <div class="text animate__animated animate__zoomIn animate__delay-1s">
+        <h1 ">Your Choice</h1>
+        <h1> <span class="Type_js"></h1></span>
+
+        <button>
+          <a href="login.html">REGISTER</a>
+        </button>
+      </div>
+      <div class="first animate__animated animate__slideInDown animate__delay-1s"></div>
+      <div class="second animate__animated animate__zoomIn animate__delay-1s"></div>
+      <div class="third animate__animated animate__slideInUp animate__delay-1s"></div>
+    </div>
+
+    <div class="about">
+
+      <div class="card_1">
+        <img src="{% static 'images/4-removebg-preview.png' %}">
+      </div>
+      <div class="card_2">
+        <img src="{% static 'images/4-removebg-preview.png' %}">
+      </div>
+    </div>
+    <div class="book_table">
+
+      <div class="table">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <input type="Date" name="Date" placeholder="Date" id="checkdate" required>
+          <input type="email" name="Email" placeholder="email" id="emal" required>
+          <input type="number" name="TableNo" placeholder="table no." id="checktime" required>
+          <button type="submit" id="main">Book Table</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <div class="contact_us_green">
+      <div class="responsive-container-block big-container">
+        <div class="responsive-container-block container">
+          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b-2">
+            <form class="form-box">
+              <div class="container-block form-wrapper">
+                <div class="responsive-container-block">
+                  <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6" id="i10mt-6">
+                    <p class="text-blk input-title">
+                      FIRST NAME
+                    </p>
+                    <input class="input" id="ijowk-6" name="FirstName">
+                  </div>
+                  <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                    <p class="text-blk input-title">
+                      LAST NAME
+                    </p>
+                    <input class="input" id="indfi-4" name="Last Name">
+                  </div>
+                  <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                    <p class="text-blk input-title">
+                      EMAIL
+                    </p>
+                    <input class="input" id="ipmgh-6" name="Email">
+                  </div>
+                  <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                    <p class="text-blk input-title">
+                      PHONE NUMBER
+                    </p>
+                    <input class="input" id="imgis-5" name="PhoneNumber">
+                  </div>
+                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-6">
+                    <p class="text-blk input-title">
+                      WHAT DO YOU HAVE IN MIND
+                    </p>
+                    <textarea class="textinput" id="i5vyy-6" placeholder="Please enter query..."></textarea>
+                  </div>
+                </div>
+                <div class="btn-wrapper">
+                  <button id="submitBtn" class="submit-btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-5 wk-ipadp-10" id="ifgi">
+            <div class="container-box">
+              <div class="text-content">
+                <p class="text-blk contactus-head">
+                  Contact us
+                </p>
+                <a class="text-blk contactus-subhead">
+                  <img src="{% static 'images/enke_02.png' %}">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>Yummy<span>Yard</span>
+        <img src="{% static 'images/fast-food (1).png' %}">
+      </h3>
+
+      <p class="footer-links">
+        <a href="landing.html" class="link-1">Home</a>
+
+        <a href="about.html">Blog</a>
+
+        <a href="menu.html">Menu</a>
+
+        <a href="about.html">About</a>
+
+        <a href="">Pages</a>
+
+        <a href="contact.html">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Yummy Yard © 2024</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Guru Nanak Insititons Of Technologoy</span>Ibrahimpatanam, RR ,501506 , Hyderabad</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+91-6356355608</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="#">support@yummyyard.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About Yummy Yard</span>
+        Yummy Yard is a modern online food ordering platform designed exclusively for college campuses.
+        It offers a convenient way for students to order meals from various campus dining options and get them delivered
+        hot and fresh to their dorms,study areas,or any on-campus location.
+        Tailored to meet the specific needs of college students, Yummy Yard simplifies campus dining.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="https://www.instagram.com/"><i class="ri-instagram-line"></i></a>
+        <a href="https://www.facebook.com/"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="https://github.com/Raju-kushwaha1230"><i class="ri-github-fill"></i></a>
+        <a href="https://x.com/i/flow/login?redirect_after_login=%2Fhome"><i class="ri-twitter-x-fill"></i></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <script src="path/to/jquery.scramble.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="{% static '\home\static\js\script.js'%}"></script>
+  <script src="{%static '\js\descrambler.js' %}"></script>
+  <script src="{% static '\js\main.js' %}"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var type = new Typed(".Type_js", {
+      strings: ["Yard Yummy", "Yummy yard"],
+      typeSpeed: 150,
+      backSpeed: 80,
+      loop: false,
+    })
+
+  </script>
+</body>
+
+</html>

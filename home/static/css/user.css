@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(236, 232, 227);
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #dadada;
+    position: relative;
+    height: 70px;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color:green;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar .profile {
+    float: right;
+}
+
+.container {
+    padding: 20px;
+}
+
+.orders {
+    margin: 20px 0;
+}
+
+.tbl-full {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl-full th, .tbl-full td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tbl-full th {
+    background-color: #f2f2f2;
+}
+
+.status.red-status {
+    color: red;
+}
+
+.status.blue-status {
+    color: blue;
+}
+
+.status.green-status {
+    color: green;
+}
+
+.profile-popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f9f9f9;
+    z-index: 1000;
+    width: 300px;
+}
+
+.profile-popup h2 {
+    margin-top: 0;
+}
+
+.profile-popup button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.profile-popup button:hover {
+    background-color: #555;
+}
+
+.profile-popup .close-btn {
+    float: right;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.profile-popup .close-btn:hover {
+    color: black;
+}

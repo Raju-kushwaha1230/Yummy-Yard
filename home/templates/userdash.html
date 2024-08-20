@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel</title>
+    <link rel="stylesheet" href="{% static '\css\user.css' %}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="menu.html">Menu</a>
+        <a href="userorder.html">Orders</a>
+        <a href="javascript:void(0);" class="profile" onclick="toggleProfilePopup()">Profile</a>
+    </div>
+    <div class="dashboard">
+          <h2>Welcome, {{ user.username }}</h2>
+    </div>
+    <!-- <div class="container">
+    <h1>My Orders</h1>
+    <div class="orders">
+        <table class="tbl-full">
+            <tr>
+                <th width="5%">S.No</th>
+                <th width="10%">Order Date</th>
+                <th width="10%">Food</th>
+                <th width="5%">Price</th>
+                <th width="5%">Qty</th>
+                <th width="6%">Total</th>
+                <th width="8%">Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2023-06-11</td>
+                <td>Pizza</td>
+                <td>Rs12</td>
+                <td>2</td>
+                <td>Rs24</td>
+                <td class="status red-status">Cancelled</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2023-06-11</td>
+                <td>Burger</td>
+                <td>Rs8</td>
+                <td>1</td>
+                <td>Rs8</td>
+                <td class="status blue-status">Ordered</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2023-06-12</td>
+                <td>Pasta</td>
+                <td>Rs15</td>
+                <td>1</td>
+                <td>Rs15</td>
+                <td class="status green-status">Done</td>
+            </tr>
+    
+        </table>
+    </div>
+</div> -->
+
+    <div id="profilePopup" class="profile-popup">
+        <span class="close-btn" onclick="toggleProfilePopup()">&times;</span>
+        <h2>User Profile</h2>
+        <p><strong>{{user.username}}</p>
+        <p><strong>{{user.email}}</p>
+        <a href="{% url 'logout' %}"> Logout</a>
+    </div>
+
+    <script>
+        function toggleProfilePopup() {
+            var popup = document.getElementById('profilePopup');
+            if (popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            alert('Logging out...');
+        }
+
+        window.onclick = function (event) {
+            var popup = document.getElementById('profilePopup');
+            if (event.target !== popup && !popup.contains(event.target) && event.target.className !== 'profile') {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

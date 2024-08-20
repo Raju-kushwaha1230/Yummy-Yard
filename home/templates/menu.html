@@ -1,0 +1,543 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".intro").fadeIn();
+            }, 5000);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main-class">
+        <div class="main">
+            <div class="loader">
+                <h2 class="zoom">YUMMY YARD</h2>
+                <h1 class="scramble">YUMMY YARD</h1>
+                <div class="loading"></div>
+            </div>
+        </div>
+        <div class="main-page">
+            <div class="nav-bar">
+                <div class="store-name">
+                    <a href="">
+                        <h2>YUMMY<img src="{% static '\images\pizza.png' %}" alt=""></h2>
+                    </a>
+                </div>
+
+                <div class="middle-part">
+                    <nav>
+                        <a href="landing.html">Home</a>
+                        <div class="menu"><a href="menu.html">Menu<i class="ri-arrow-down-s-line"></i></a>
+                            <div class="menu-subdiv">
+                                <div>
+                                    <a href="#intro">Burger</a>
+
+                                    <a href="#pizza">Pizza</a>
+                                    <a href="#noodles">Noodle</a>
+                                </div>
+                                <div>
+                                    <a href="#chicken">Chicken</a>
+                                    <a href="#biryani">Biryani</a>
+                                    <a href="#fish">Fish</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu">
+                            <a href="">Pages<i class="ri-arrow-down-s-line"></i></a>
+                            <div class="menu-subdiv">
+                                <div>
+                                    <a href="menu.html">Menu</a>
+                                    <a href="about.html">About US</a>
+                                </div>
+                                <div>
+                                    <a href="contact.html">Contact US</a>
+                                    <a href="">Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="foodorde.html">Shop</a>
+                        <a href="about.html">Blog</a>
+                        <a href="contact.html">Contact US</a>
+                    </nav>
+                </div>
+                <div class="last-part">
+                    <div class="search">
+                        <input type="text" placeholder="">
+                        <a href="#">
+                            <i class="fas ri-search-line"></i>
+                        </a>
+                    </div>
+                    <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+                    <a href="#"><i class="ri-menu-3-line"></i></a>
+
+                </div>
+            </div>
+            <div class="intro1">
+            
+            </div>
+
+        </div>
+        <div class="intro hidden" id="text">
+            <div class="content">
+                <h2>International Dishes</h2>
+                <h3>Our Iconic Menus</h3>
+            </div>
+            <div class="slide-bar">
+                <div class="items" id="slide">
+                    <div class="img1">
+                        <img src="{% static '\images\home-1-carousel-image-101.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+                    <div class="img2"><img src="{% static '\images\home-1-carousel-image-102.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+                    <div class="img3"><img src="{% static '\images\home-1-carousel-image-103.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+                    <div class="img4">
+                        <img src="{% static '\images\category-img-3.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img5"><img src="{% static '\images\home-1-carousel-image-102.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img6"><img src="{% static '\images\category-img-5.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img1"><img src="{% static '\images\home-1-carousel-image-101.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img2"><img src="{% static '\images\home-1-carousel-image-102.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img3"><img src="{% static '\images\home-1-carousel-image-103.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img4"><img src="{% static '\images\category-img-3.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img5"><img src="{% static '\images\category-img-4.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+
+                    <div class="img6"><img src="{% static '\images\category-img-5.jpg' %}" alt="">
+                        <div class="order-field"><a href="foodorde.html">Order Now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <div class="main-items">
+                <h2>Mouth Watering</h2>
+                <h3>Special Menus</h3>
+                <div class="sub-items">
+                    <div class="burger">
+                        <h2>Veg burger</h2>
+                        <div class="part1">
+                            <div>
+                                <p>Chease Burger</p>
+                                <img src="{% static '\images\burger/1pic.jpg' %}" alt="burger" loading="lazy">
+
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>250</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Veggie burger</p>
+                                <img src="{% static 'images/burger/2pic.jpg' %}" alt="burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>400</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+
+                                </div>
+                            </div>
+                            <div>
+                                <p>Kit Burger</p>
+                                <img src="{% static '\images\burger\pexels-valeriya-1639557.jpg' %}" alt="burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>350</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Mushroom burger</p>
+                                <img src="{% static '\images\burger\pexels-valeriya-1251197.jpg' %}" alt="burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>150</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Non-Veg Burger</h2>
+                        <div class="part2">
+                            <div>
+                                <p>chicken tiki burger</p>
+                                <img src="{% static '\images\burger\pexels-valeriya-1199960.jpg' %}" alt="chicken burger"
+                                    loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>HamBurger</p>
+                                <img src="{% static '\images\burger\chicken burger.jpg' %}" alt="ham burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>299</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Butter chicken burger</p>
+                                <img src="{% static '\images\burger\elk burger.jpg' %}" alt="butter chicken burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>399</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Chicken Hamburger</p>
+                                <img src="{% static '\images\burger\hamburger.jpg' %}" alt="chicken hamburger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>499</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pizza">
+                        <h2>pizza</h2>
+                        <div class="part1">
+
+                            <div>
+                                <p>Chease Burger</p>
+                                <img src="{% static '\images\pizza\Brick Oven Pizza 1.jpg' %}" alt="chease burger" loading="lazy">
+
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>250</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <p>Veggie burger</p>
+                                <img src="{% static '\images\pizza\Brick Oven Pizza 2.jpg' %}" alt="Veggie burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>400</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+
+                                </div>
+                            </div>
+                            <div>
+                                <p>Kit Burger</p>
+                                <img src="{% static '\images\pizza\Brick Oven Pizza.jpg' %}" alt="kit burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>350</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Mushroom burger</p>
+                                <img src="{% static '\images\pizza\chikago-style pizza 1.jpg' %}" alt="mushroom burger" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>150</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="part2" id="pizza-part2">
+                            <div>
+                                <p>chicken tiki burger</p>
+                                <img src="{% static '\images\pizza\chikago-style pizza.jpg' %}" alt="chicken tiki burger"
+                                    loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>HamBurger</p>
+                                <img src="{% static '\images\pizza\Italian Pizza..jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>299</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Butter chicken burger</p>
+                                <img src="{% static '\images\pizza\Italian Pizza.1.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>399</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Chicken Hamburger</p>
+                                <img src="{% static '\images\pizza\New York Style Pizza.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>499</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="noodles">
+                        <h2>Noodles</h2>
+                        <div class="part1">
+                            <div>
+                                <p>Ramen Noodle</p>
+                                <img src="{% static '\images\ramen noodles.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Spicy Tasty Noodle</p>
+                                <img src="{% static '\images\noodles.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>99</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Rice Noodles</p>
+                                <img src="{% static '\images\rice noodle.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>150</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Egg Noodles </p>
+                                <img src="{% static '\images\egg noodles.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chicken">
+                        <h2>Chickens</h2>
+                        <div class="part1">
+
+                            <div>
+                                <p>Chicken Beast</p>
+                                <p>6 pieces with chatani and small soft drink</p>
+                                <img src="{% static '\images\chicken breast.jpg' %}" alt="" loading="lazy">
+
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>299</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <p>Fried Chicken Combo</p>
+                                <p>9 leg pieces with chatani & soft Drink</p>
+                                <img src="{% static '\images\chicken leg fried.jpg' %}" alt="" loading="lazy">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>399</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+
+                                </div>
+                            </div>
+                            <div>
+                                <p>Chicken wings</p>
+                                <p>6 pieces with chatani and 200 gr soft drink</p>
+                                <img src="{% static '\images\chicken wings.jpg' %}" alt="">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Full Chicken Fried</p>
+                                <p>Hole tandoori chicken fried with three soft drink</p>
+                                <img src="{% static '\images\chicken body.jpg' %}" alt="">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>499</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="biryani">
+                        <h2>Biryani</h2>
+                        <div class="part1">
+
+                            <div>
+                                <p>Chicken Biryani</p>
+                                <p>2 big chicken pieces </p>
+                                <img src="{% static '\images\chicken biryani.jpg' %}" alt="">
+
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>200</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+
+
+                            </div>
+                            <div>
+                                <p>Egg Biryani</p>
+                                <p>4 Egg pieces </p>
+                                <img src="{% static '\images\agg biryani.jpg ' %}" alt="">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>150</p>
+                                    <button ><a href="foodorde.html">Buy</a></button>
+
+                                </div>
+                            </div>
+                            <div>
+                                <p>Paneer Biryani</p>
+                                <p>100 gm panner </p>
+                                <img src="{% static '\images\paner biryani.jpg' %}" alt="">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>199</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Mix Veg Biryani</p>
+                                <p>Mix veg </p>
+                                <img src="{% static '\images\mix veg biryani.jpg' %}" alt="">
+                                <div class="button-anime">
+                                    <p><i class="ri-money-rupee-circle-line"></i>99</p>
+
+                                    <button ><a href="foodorde.html">Buy</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="fish">
+                    <h2>Fish</h2>
+                    <div class="part1">
+
+                        <div>
+                            <p>Fish Dish</p>
+                            <p>fress fish </p>
+                            <img src="{% static '\images\fish dish.jpg' %}" alt="">
+
+                            <div class="button-anime">
+                                <p><i class="ri-money-rupee-circle-line"></i>299</p>
+                                <button ><a href="foodorde.html">Buy</a></button>
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <p>Fish Fried </p>
+                            <p>Fress fish with rice </p>
+                            <img src="{% static '\images\fish fried with meals.jpg' %}" alt="">
+                            <div class="button-anime">
+                                <p><i class="ri-money-rupee-circle-line"></i>333</p>
+                                <button ><a href="foodorde.html">Buy</a></button>
+
+                            </div>
+                        </div>
+                        <div>
+                            <p>Fish Waves Tasty Dish</p>
+                            <p>fress fish dish</p>
+                            <img src="{% static '\images\fish waves.jpg' %}" alt="">
+                            <div class="button-anime">
+                                <p><i class="ri-money-rupee-circle-line"></i>299</p>
+
+                                <button ><a href="foodorde.html">Buy</a></button>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Tasty Fish</p>
+                            <p>Fress Sea Fish </p>
+                            <img src="{% static '\images\fish.jpg' %}" alt="">
+                            <div class="button-anime">
+                                <p><i class="ri-money-rupee-circle-line"></i>199</p>
+
+                                <button ><a href="foodorde.html">Buy</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer" style="color: #fff;">
+                <div  class="AboutUs">
+                    <h1 style="text-align: center;">About US</h1>
+                    
+                    
+                    <p style="text-align: center;">Yummy Yard is a modern online food ordering platform designed exclusively for college campuses. It offers a convenient way for students to order meals from various campus dining options and get them delivered hot and fresh to their dorms,study areas,or any on-campus location. Tailored to meet the specific needs of college students, Yummy Yard simplifies campus dining.</p>
+                </div>
+                <div class="OtherLinks" style="font-size: 3vh; word-spacing: 10px;">
+                    <h1>OtherLinks</h1>
+                    <a style="text-decoration: none;" href="">Home</a>
+                    <a style="text-decoration: none;" href="">Menu</a>
+                    <a style="text-decoration: none;" href="">Pages</a>
+                    <a style="text-decoration: none;" href="">Shop</a>
+                    <a style="text-decoration: none;" href="">Blog</a>
+                    <a style="text-decoration: none;" href="">ContactUS</a>
+                </div>
+                <div class="Contact">
+                    <h1>Contact ME</h1>
+                    <h2><i class="ri-home-3-line"></i> Guru Nanak Institutions, +Hyderabad</h2>
+                    <p><i class="ri-mail-line"></i> info@indiayard.org</p>
+                    <p><i class="ri-phone-fill"></i> +91-7973989466</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="path/to/jquery.scramble.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js\descrambler.js' %}"></script>
+
+    <script src="{% static 'js\script.js' %}"></script>
+</body>
+
+</html>
