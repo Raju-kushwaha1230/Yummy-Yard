@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url 
+from dotenv import load_dotenv
+
 import os
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -86,22 +90,24 @@ WSGI_APPLICATION = 'YummyYard.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.mysql',
-        'ENGINE': 'mysql.connector.django',
-        'NAME' : 'yummyYard',
-        'USER' : 'root',
-        'PASSWORD' : 'mighty@098',
-        'HOST' : 'localhost',
-        'PORT' : '3306'
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': BASE_DIR / 'db.sqlite3',
+#         # 'ENGINE': 'django.db.backends.mysql',
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME' : 'yummyYard',
+#         'USER' : 'root',
+#         'PASSWORD' : 'mighty@098',
+#         'HOST' : 'localhost',
+#         'PORT' : '3306'
         
-    }
+#     }
+# }
+print(os.environ.get('DATABASE_URL'))
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL','postgresql://yummydb_user:X1hs7wnRl1gBTxYZGoWTzJ0u89uGkW30@dpg-cr5vtqjv2p9s73akg520-a.oregon-postgres.render.com/yummydb'))
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -140,6 +146,7 @@ STATIC_URL = 'static/'
 STATIC_DIR = [
     BASE_DIR / 'static'
 ]
+MEDIA_URL = 'media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

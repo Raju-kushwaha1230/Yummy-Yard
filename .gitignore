@@ -8,7 +8,7 @@ venv/
 .env
 
 # Django specific
-db.mysql
+db.postgresql
 media/
 staticfiles/
 
