@@ -31,7 +31,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/yummy-yard-college.git
+   git clone https://github.com/Raju-kushwaha1230/Yummy-Yard
 2. Navigate to the project directory:
 bash
 cd yummy-yard-college
